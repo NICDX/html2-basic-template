@@ -2,6 +2,38 @@
 @import "global/variables";
 @import "global/global";
 @import "global/fonts";
+@import "global/mixins";
+
 
 /* BLOCKS */
 @import "blocks/header";
+
+
+/*functions */
+@import "blocks/functions/burger/burger";
+@import "blocks/functions/title/title";
+@import "blocks/functions/price/price";
+@import "blocks/functions/button/button";
+@import "blocks/functions/control/control";
+@import "blocks/functions/range-slider/range-slider";
+@import "blocks/functions/text-filed/text-filed";
+@import "blocks/functions/dropdown/dropdown";
+@import "blocks/functions/pagination/pagination";
+/*functions */
+
+/*content*/
+@import "blocks/page/page";
+@import "blocks/slider/sldier";
+@import "blocks/nav/nav";
+@import "blocks/personal-nav/personal-nav";
+@import "blocks/header/header";
+@import "blocks/social/social";
+@import "blocks/footer-nav/footer-nav";
+@import "blocks/footer/footer";
+@import "blocks/intro/intro";
+@import "blocks/features/features";
+@import "blocks/filter-form/filter-form";
+@import "blocks/catalog/catalog";
+@import "blocks/product-card/product-card";
+@import "blocks/map/map";
+/*content*/
