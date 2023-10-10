@@ -1,0 +1,101 @@
+.footer-nav {
+  @media ($mediaDesktop) {
+    padding-top: 6px;
+  }
+}
+
+.footer-nav__section {
+  padding: 20px;
+  border-bottom: 1px solid $colorBaseSecondary;
+
+  @media ($mediaTablet) {
+    border-bottom: none;
+    padding: 0;
+    flex: 1;
+  }
+}
+
+.footer-nav__title {
+  color: $colorBasePrimary;
+  letter-spacing: 0.28px;
+  margin: 0 0 12px 0;
+  font-size: 14px;
+
+  @media ($mediaTablet) {
+    margin-bottom: 8px;
+  }
+
+  @media ($mediaDesktop) {
+    margin-bottom: 10px;
+  }
+}
+
+.footer-nav__list {
+  @include list-reset;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &--contacts {
+    gap: 8px;
+    padding-top: 6px;
+  }
+}
+
+.footer-nav__link {
+  @include link-reset;
+  display: block;
+  text-transform: uppercase;
+  padding: 6px 0;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.24px;
+
+  &--address,
+  &--phone {
+    text-transform: initial;
+    font-weight: 400;
+    letter-spacing: initial;
+    padding: 0 0 0 19px;
+    position: relative;
+    font-size: 14px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      display: inline-block;
+      left: 0;
+      width: 13px;
+      height: 17px;
+      background-color: $colorBasePrimary;
+    }
+
+    @media ($mediaTablet) {
+      max-width: max(175px, 20vw);
+      line-height: 20px;
+    }
+  }
+
+  &--address::before {
+    mask-image: url("../../images/icons/stack.svg#pin-address");
+  }
+
+  &--phone::before {
+    mask-image: url("../../images/icons/stack.svg#phone");
+  }
+
+  @media ($mediaTablet) {
+    padding-top: 4px;
+    padding-bottom: 4px;
+
+    &:hover,
+    &:focus-visible {
+      color: $colorBasePrimary;
+    }
+  }
+
+  &:active {
+    color: $colorPrimaryDarker;
+  }
+}

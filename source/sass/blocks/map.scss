@@ -1,0 +1,33 @@
+.map {
+  height: 420px;
+  position: relative;
+
+  img {
+    @include image;
+    display: block;
+  }
+
+  @media ($mediaTablet) {
+    height: 480px;
+  }
+
+  @media ($mediaDesktop) {
+    height: 540px;
+  }
+}
+
+.map__pin {
+  @include button-reset;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @media ($mediaTablet) {
+    left: 52%;
+  }
+
+  @media ($mediaDesktop) {
+    left: 51%;
+  }
+}

@@ -1,0 +1,113 @@
+.filter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @media ($mediaTablet) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 40px;
+  }
+
+  @media ($mediaDesktop) {
+    display: flex;
+    row-gap: 30px;
+  }
+}
+
+.filter-form__fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filter-form__legend {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 20px;
+
+  &--range {
+    margin-bottom: 30px;
+
+    @media ($mediaDesktop) {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+.filter-form__price-slider {
+  margin-bottom: 34px;
+  max-width: 318px;
+
+  @media ($mediaTablet) {
+    margin-bottom: 30px;
+  }
+
+  @media ($mediaDesktop) {
+    margin-bottom: 32px;
+  }
+}
+
+.filter-form__price-range-inner {
+  display: flex;
+  gap: 44px;
+
+  @media ($mediaDesktop) {
+    gap: 50px;
+  }
+}
+
+.filter-form__price-control {
+  max-width: min(max(118px, 50vw), 134px);
+
+  &:first-child {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 8px;
+      background-color: $colorBaseGrey;
+      right: -26px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      @media ($mediaDesktop) {
+        right: -29px;
+      }
+    }
+  }
+}
+
+//$colorBaseGrey;
+
+.filter-form__list {
+  @include list-reset;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.filter-form__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media ($mediaTablet) {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @media ($mediaDesktop) {
+    margin-top: 10px;
+  }
+}
+
+.filter-form__button {
+  @media ($mediaDesktop) {
+    flex: 1;
+  }
+}

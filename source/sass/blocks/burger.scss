@@ -1,0 +1,48 @@
+.burger {
+  @include button-reset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &--opened .burger__element {
+    background-color: transparent;
+
+    &::before {
+      transform: translateY(5px) rotate(-45deg);
+    }
+
+    &::after {
+      transform: translateY(-5px) rotate(45deg);
+    }
+  }
+
+  &:active {
+    background-color: $colorBaseSecondary;
+  }
+}
+
+.burger__element {
+  display: block;
+  width: 16px;
+  height: 1px;
+  background-color: currentColor;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: currentColor;
+  }
+
+  &::before {
+    top: -5px;
+  }
+
+  &::after {
+    top: 5px;
+  }
+}

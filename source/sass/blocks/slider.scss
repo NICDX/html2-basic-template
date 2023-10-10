@@ -1,0 +1,151 @@
+.slider {
+  position: relative;
+}
+
+.slider__inner {
+  overflow: hidden;
+}
+
+.slider__track {
+  @include list-reset;
+  transition: transform 0.4s ease;
+  display: flex;
+}
+
+.slider__item {
+  flex-shrink: 0;
+  width: calc(100vw - (100vw - 100%));
+}
+
+.slider__arrow {
+  @include button-reset;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 50%;
+    pointer-events: none;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-top: 2px solid $colorBasePrimary;
+    border-right: 2px solid $colorBasePrimary;
+  }
+
+  &--prev {
+    left: 0;
+
+    &::after {
+      transform: translate(calc(-50% + 4px), -50%) rotate(-135deg);
+    }
+
+    @media ($mediaTablet) {
+      &:hover,
+      &:focus-visible {
+        background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+      }
+    }
+
+    &:active {
+      background: linear-gradient(90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+    }
+  }
+
+  &--next {
+    right: 0;
+
+    &::after {
+      transform: translate(calc(-50% - 4px), -50%) rotate(45deg);
+    }
+
+    @media ($mediaTablet) {
+      &:hover,
+      &:focus-visible {
+        background: linear-gradient(-90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+      }
+    }
+
+    &:active {
+      background: linear-gradient(-90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+    }
+  }
+
+  &:disabled {
+    background: transparent;
+
+    &::after {
+      border-color: $colorBaseGrey;
+    }
+
+    &:hover,
+    &:focus-visible {
+      background: transparent;
+      cursor: auto;
+    }
+  }
+
+  @media ($mediaTablet) {
+    width: 80px;
+    height: 77%;
+  }
+
+  @media ($mediaDesktop) {
+    height: 100%;
+  }
+}
+
+.slider__pagination {
+  @include list-reset;
+  display: none;
+  position: absolute;
+  gap: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 202px;
+  bottom: 60px;
+
+  @media ($mediaDesktop) {
+    display: flex;
+  }
+}
+
+.slider__pagination-button {
+  @include button-reset;
+  height: 24px;
+  width: 100%;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: $colorBaseWhite;
+    height: 4px;
+  }
+
+  &:hover,
+  &:focus-visible {
+    &::after {
+      background-color: $colorPrimaryOpacity;
+    }
+  }
+}
+
+.slider__pagination-item {
+  flex: 1;
+
+  &--current {
+    .slider__pagination-button::after {
+      background-color: $colorBasePrimary;
+    }
+  }
+}

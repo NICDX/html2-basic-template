@@ -1,1 +1,37 @@
-/* здесь используйте глобальные переменные */
+// Colors
+$colorBasePrimary: #7859cf;
+$colorBaseSecondary: #f0ebff;
+$colorBaseBlack: #333333;
+$colorBaseWhite: #ffffff;
+$colorBaseGrey: #bdbdbd;
+
+$colorPrimaryOpacity: rgba(120, 89, 207, 0.25);
+$colorPrimaryLighter: #9070ec;
+$colorPrimaryDarker: #593cac;
+$colorLightGrey: #e2e2e2;
+
+$colorLightestGrey: #f8f8f8;
+$colorFlatWhite: #f3ebe1;
+$colorLavenderLatte: #eae6fc;
+$colorEspresso: #e5e6e8;
+
+$animationTransition: 0.15s;
+
+// Container
+$maxContainerWidth: 1360px;
+
+// Indents
+$containerIndent: 20px;
+$containerIndentDesktop: 40px;
+
+// Viewport
+$mediaTablet: "min-width: 768px";
+$mediaDesktop: "min-width: 1440px";
+$mediaNoTablet: "max-width: 767px";
+$mediaNoDesktop: "max-width: 1439px";
+
+// Layers
+$layerRegular: 1;
+$layerMedium: 5;
+$layerHigh: 10;
+$layerExtra: 1000;

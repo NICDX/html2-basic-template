@@ -1,0 +1,148 @@
+.intro {
+  text-align: center;
+
+  @media ($mediaDesktop) {
+    text-align: left;
+  }
+}
+
+.intro__slide {
+  min-height: 640px;
+  padding: 20px 20px 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+
+  &--flat-white {
+    background: $colorFlatWhite;
+
+    @media ($mediaTablet) {
+      background: linear-gradient($colorFlatWhite 77%, transparent 77%);
+    }
+
+    @media ($mediaDesktop) {
+      background: $colorFlatWhite;
+    }
+  }
+
+  &--lavender {
+    background: $colorLavenderLatte;
+
+    @media ($mediaTablet) {
+      background: linear-gradient($colorLavenderLatte 77%, transparent 77%);
+    }
+
+    @media ($mediaDesktop) {
+      background: $colorLavenderLatte;
+    }
+  }
+
+  &--espresso {
+    background: $colorEspresso;
+
+    @media ($mediaTablet) {
+      background: linear-gradient($colorEspresso 77%, transparent 77%);
+    }
+
+    @media ($mediaDesktop) {
+      background: $colorEspresso;
+    }
+  }
+
+  @media ($mediaTablet) {
+    flex-direction: column-reverse;
+    padding-top: 60px;
+    padding-bottom: 0;
+  }
+
+  @media ($mediaDesktop) {
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+    padding-top: 30px;
+    padding-bottom: 84px;
+  }
+}
+
+.intro__slide-image {
+  margin-bottom: 10px;
+  margin-top: auto;
+  width: 280px;
+
+  img {
+    @include image;
+  }
+
+  @media ($mediaTablet) {
+    width: 476px;
+    margin-bottom: 0;
+  }
+
+  @media ($mediaDesktop) {
+    width: 600px;
+    margin-top: 0;
+  }
+}
+
+.intro__slide-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media ($mediaDesktop) {
+    align-items: flex-start;
+    padding-left: 7px;
+  }
+}
+
+.intro__badge {
+  margin-bottom: 4px;
+}
+
+.intro__slide-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  line-height: 48px;
+  letter-spacing: 0.72px;
+
+  @media ($mediaTablet) {
+    font-size: 56px;
+    line-height: 80px;
+    letter-spacing: 1.12px;
+    margin-bottom: 16px;
+  }
+}
+
+.intro__slide-text {
+  margin: 0 0 20px 0;
+  max-width: 608px;
+
+
+  @media ($mediaTablet) {
+    font-size: 20px;
+    line-height: 32px;
+    margin-bottom: 20px;
+  }
+
+  @media ($mediaDesktop) {
+    margin-bottom: 40px;
+  }
+}
+
+.intro__slide-footer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+
+  @media ($mediaTablet) {
+    margin-bottom: 20px;
+  }
+
+  @media ($mediaDesktop) {
+    margin-bottom: 8px;
+  }
+}

@@ -1,0 +1,5 @@
+export default {
+  VIEWPORT_MOBILE: 320,
+  VIEWPORT_TABLET: 768,
+  VIEWPORT_DESKTOP: 1440,
+}

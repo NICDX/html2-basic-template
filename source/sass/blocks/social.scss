@@ -1,0 +1,33 @@
+.social {
+  @include list-reset;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.social__link {
+  @include link-reset;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $colorBaseGrey;
+
+  svg {
+    display: block;
+  }
+
+  @media ($mediaTablet) {
+    &:hover,
+    &:focus-visible {
+      color: $colorBasePrimary;
+      background-color: $colorBaseSecondary;
+    }
+  }
+
+  &:active {
+    color: $colorBasePrimary;
+    background-color: $colorPrimaryOpacity;
+  }
+}

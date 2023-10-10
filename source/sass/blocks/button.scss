@@ -1,0 +1,85 @@
+.button {
+  @include button-reset;
+  @include link-reset;
+  font: inherit;
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 24px;
+
+
+  &--primary {
+    background-color: $colorBasePrimary;
+    color: $colorBaseWhite;
+  }
+
+  &--secondary {
+    background-color: $colorBaseWhite;
+    color: $colorBasePrimary;
+  }
+
+  &--cart-add {
+    position: relative;
+    padding-left: 46px;
+    font-size: 14px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 16px;
+      mask: url("../../images/icons/stack.svg#cart-add");
+      background-color: currentColor;
+    }
+  }
+
+
+  @media ($mediaTablet) {
+    &:hover,
+    &:focus-visible {
+      background-color: $colorPrimaryLighter;
+      color: $colorBaseWhite;
+    }
+  }
+
+  &:active {
+    background-color: $colorPrimaryDarker;
+    color: $colorBaseWhite;
+  }
+
+  &:disabled,
+  &.button--disabled {
+    cursor: auto;
+    pointer-events: none;
+    color: $colorBaseWhite;
+  }
+
+  &--primary:disabled,
+  &--primary.button--disabled {
+    background-color: $colorBaseGrey;
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      background-color: $colorBaseGrey;
+    }
+  }
+
+  &--secondary:disabled,
+  &--secondary.button--disabled {
+    background-color: $colorLightGrey;
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      background-color: $colorLightGrey;
+    }
+  }
+}

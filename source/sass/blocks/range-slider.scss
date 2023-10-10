@@ -1,0 +1,59 @@
+.range-slider {
+  height: 4px;
+  box-shadow: none;
+  border: none;
+  background: $colorLightGrey;
+  border-radius: 0;
+
+  .noUi-connect {
+    background: $colorPrimaryLighter;
+  }
+
+  .noUi-handle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid $colorPrimaryLighter;
+    background-color: $colorBaseWhite;
+    box-shadow: inset 0 0 0 2px $colorBaseWhite;
+    cursor: pointer;
+    right: -15px;
+    top: -10px;
+    outline: none;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    @media ($mediaTablet) {
+      &:hover,
+      &:focus-visible {
+        background-color: #ddd5f3;
+      }
+    }
+
+    &:active {
+      background-color: $colorBasePrimary;
+    }
+  }
+}
+
+[disabled].range-slider {
+  cursor: auto;
+
+  .noUi-connect {
+    background-color: $colorBaseGrey;
+  }
+
+  .noUi-touch-area,
+  .noUi-handle {
+    cursor: auto;
+  }
+
+  .noUi-handle {
+    border-color: $colorBaseGrey;
+    background-color: $colorLightestGrey;
+    box-shadow: none;
+  }
+}
